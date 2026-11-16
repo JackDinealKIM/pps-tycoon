@@ -241,11 +241,11 @@
   .sheet ol{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:7px; font-size:clamp(11px,1.1vw,13.5px); line-height:1.5; color:#33415a;}
   .sheet .tag{display:inline-block; font-weight:900; color:var(--blue); margin-right:4px;}
   .sheet p{font-size:clamp(10.5px,1.05vw,13px); color:#5d6b7e; line-height:1.55; margin:1em 0 0;}
-  .toast{position:absolute; left:50%; bottom:clamp(70px,13vh,120px); transform:translate(-50%,14px); z-index:30;
+  .toast{position:absolute; left:50%; top:40%; transform:translate(-50%,-8px); z-index:30;
     background:rgba(10,26,48,.94); color:#fff; font-size:clamp(11px,1.15vw,14px); font-weight:700; line-height:1.4;
     padding:11px 18px; border-radius:12px; max-width:min(84%,620px); text-align:center; opacity:0; pointer-events:none;
     transition:opacity .22s ease, transform .22s ease; box-shadow:0 14px 34px rgba(2,8,20,.45);}
-  .toast.show{opacity:1; transform:translate(-50%,0);}
+  .toast.show{opacity:1; transform:translate(-50%,8px);}
   .toast.good{background:rgba(6,90,64,.95);}
   .toast.mid{background:rgba(130,84,0,.95);}
   .toast.bad{background:rgba(150,26,20,.95);}
