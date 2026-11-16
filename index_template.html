@@ -1020,7 +1020,7 @@
       [-1.35, 0, 1.35].forEach((x,i)=>{
         const h = heights[i];
         const m = new T.Mesh(new T.BoxGeometry(1.15, h, 1.15),
-          new T.MeshStandardMaterial({ color: i===1?0x14405f:0x0e2a42, metalness:.5, roughness:.45, emissive: i===1?0x2f7fb0:0x1c4f78, emissiveIntensity: i===1?.32:.2 }));
+          new T.MeshStandardMaterial({ color: i===1?0x0f334d:0x0a1e31, metalness:.3, roughness:.72, emissive: i===1?0x1d5a86:0x123c5c, emissiveIntensity: i===1?.22:.14 }));
         m.position.set(x, h/2 + .16, 0);
         m.castShadow = true; m.receiveShadow = true;
         podiumGrp.add(m);
@@ -1821,7 +1821,6 @@
     STATE.pts += ex.pts; STATE.sat += ex.sat; STATE.int += ex.int;
     STATE.fair += ex.fair||0; STATE.innov += ex.innov||0;
     STATE.log.push({round:STATE.r+1, pick:"재공고", pts:ex.pts});
-    sparkle(8);
     paint();
     clearNext();
     nextTimer = setTimeout(next, 1600);
@@ -1834,7 +1833,7 @@
     if(b.disabled){ sBad(); toast(b.msg,"bad"); return; }
     STATE.locked = true;
 
-    if(b.cls==="good"){ sGood(); PPS3D.react("good"); sparkle(12); }
+    if(b.cls==="good"){ sGood(); PPS3D.react("good"); }
     else if(b.cls==="mid"){ sMid(); PPS3D.react("mid"); }
     else { sBad(); PPS3D.react("bad"); }
 
@@ -1908,7 +1907,7 @@
     show("#scr-result");
     PPS3D.setMode("result");
     PPS3D.refreshWindow();
-    if(score>=75){ PPS3D.burst(150, 4.6); sparkle(18); sWin(); }
+    if(score>=75){ PPS3D.burst(150, 4.6); sWin(); }
     else PPS3D.burst(60, 4.2);
   }
 
