@@ -2638,15 +2638,15 @@
 
   // 3D 카운터의 인물을 직접 눌러도 선택된다
   (function(){
-    const cv=document.getElementById("bg3d");
-    if(!cv) return;
+    const host=document.getElementById("win-play");
+    if(!host) return;
     let last=-1, lastT=0;
-    cv.addEventListener("pointerdown",e=>{
+    host.addEventListener("pointerdown",e=>{
       if(!$("#scr-play").classList.contains("active")) return;
       const i=PPS3D.raycast(e.clientX,e.clientY);
       if(i>=0 && !STATE.locked){ SFX.tap(); choose(i); }
     });
-    cv.addEventListener("pointermove",e=>{
+    host.addEventListener("pointermove",e=>{
       if(!$("#scr-play").classList.contains("active")) return;
       const now=performance.now();
       if(now-lastT<70) return;
@@ -2655,7 +2655,7 @@
       if(i!==last){
         last=i;
         PPS3D.hoverBid(i);
-        cv.style.cursor=i>=0?"pointer":"default";
+        host.style.cursor=i>=0?"pointer":"default";
         document.querySelectorAll("#bids .bid").forEach((c,k)=> c.classList.toggle("hot",k===i));
       }
     });
